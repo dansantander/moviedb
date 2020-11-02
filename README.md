@@ -16,7 +16,7 @@ A front-end React and Redux movie data application built with OMDB API.
 
 ## Demo
 
-[React Calculator](https://react-calculator2504.herokuapp.com/)
+[MovieDB](https://moviedb-2729.herokuapp.com/)
 
 ## Features
 
