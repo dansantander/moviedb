@@ -1,13 +1,97 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(36, 41, 49);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    source-code-pro,
+    Menlo,
+    Monaco,
+    Consolas,
+    'Courier New',
     monospace;
+}
+
+nav {
+  background-color: rgb(46, 53, 63);
+}
+
+.nav-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  justify-content: flex-end;
+  margin: 2rem;
+}
+
+.cat-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+select {
+  background-color: #3c9651;
+  border: 1px solid #3c9651;
+  color: white;
+  border-radius: 5px;
+  width: 80px;
+  height: 30px;
+  list-style-type: none;
+}
+
+.movie-container {
+  width: 70%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  height: 100%;
+  padding: 2rem;
+  background-color: rgb(46, 53, 63);
+}
+
+.card p {
+  font-size: 12px;
+}
+
+.movie-details {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+
+.movie-details img {
+  width: 30%;
+}
+
+.movie-details.card-body {
+  float: left;
 }
