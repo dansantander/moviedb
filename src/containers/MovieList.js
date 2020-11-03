@@ -75,12 +75,10 @@ class MovieList extends Component {
           <div className="grid-container mt-3">
             <div className="cat-container">
               <CategoryFilter change={this.handleFilterChange} />
-
               <form className="form-inline mt-3" onSubmit={this.submitQuery}>
                 <input id="searchBar" className="form-control mr-sm-2" value={input} onChange={this.handleQueryChange} placeholder="Search for movies" />
                 <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
               </form>
-
             </div>
 
             <div className="movie-container">
