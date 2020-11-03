@@ -19,8 +19,6 @@ class MovieDetails extends Component {
     const { imdbID } = this.props.match.params;
     /* eslint-enable */
 
-    // console.log('entering component did mount');
-    // console.log(this.props.match.params.imdbID);
     axios.get(`http://www.omdbapi.com/?apikey=1f69237e&i=${imdbID}`)
       .then(result => {
         if (mounted) {
@@ -31,13 +29,10 @@ class MovieDetails extends Component {
           mounted = false;
         }
       });
-    // .catch(console.log('failure'));
   }
 
   render() {
     const { details, isLoading } = this.state;
-    // console.log('entered render');
-    // console.log(details);
     return (
       <>
         { !isLoading ? (

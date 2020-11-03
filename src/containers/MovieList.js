@@ -53,7 +53,8 @@ class MovieList extends Component {
     return false;
   }
 
-  submitQuery() {
+  submitQuery(e) {
+    e.preventDefault();
     const { input } = this.state;
 
     axios.get(`http://www.omdbapi.com/?apikey=1f69237e&s=${input}`)
@@ -71,23 +72,25 @@ class MovieList extends Component {
     return (
       <>
         { !isLoading ? (
-          <div className="grid-container">
-
-            <form className="form-inline mt-3">
-              <input id="searchBar" className="form-control mr-sm-2" value={input} onChange={this.handleQueryChange} placeholder="Search for movies" />
-              <button className="btn btn-outline-success my-2 my-sm-0" onClick={this.submitQuery} type="button">Submit</button>
-            </form>
-
+          <div className="grid-container mt-3">
             <div className="cat-container">
               <CategoryFilter change={this.handleFilterChange} />
+
+              <form className="form-inline mt-3" onSubmit={this.submitQuery}>
+                <input id="searchBar" className="form-control mr-sm-2" value={input} onChange={this.handleQueryChange} placeholder="Search for movies" />
+                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Submit</button>
+              </form>
+
             </div>
 
             <div className="movie-container">
-              {
-            movies.filter(movie => (this.showMovie(movie))).map(movie => (
-              <Movie key={movie.imdbID} movie={movie} />
-            ))
-          }
+              { movies
+                ? movies.filter(movie => (this.showMovie(movie))).map(movie => (
+                  <Movie key={movie.imdbID} movie={movie} />
+                ))
+                : (
+                  <h3 className="no-data">Not data found for that query.</h3>
+                )}
             </div>
           </div>
         ) : (

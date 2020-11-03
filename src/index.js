@@ -13,9 +13,11 @@ const defaultState = {
   details: {},
 };
 
+/* eslint-disable no-underscore-dangle */
 const store = createStore(
   rootReducer,
   { movies: defaultState.movies },
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
 
 ReactDOM.render(
