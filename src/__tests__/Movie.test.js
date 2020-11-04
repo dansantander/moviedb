@@ -19,7 +19,7 @@ const storeBase = createStore(rootReducer, initialStateBase);
 function render(
   ui,
   {
-    initialState = initialStateBase,
+    initialStateBase,
     store = storeBase,
     ...renderOptions
   } = {},
@@ -49,7 +49,7 @@ const movie = {
 
 test('movie Poster is loaded when App is rendered', () => {
   render(<Movie movie={movie} />);
-  expect(screen.getByTestId("Poster")).toBeDefined();
+  expect(screen.getByTestId('Poster')).toBeDefined();
 });
 
 test('movie Title is loaded when App is rendered', () => {
