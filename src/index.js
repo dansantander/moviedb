@@ -8,14 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 const defaultState = {
-  movies: [],
   filter: 'all',
-  details: {},
 };
 
 const store = createStore(
   rootReducer,
-  { movies: defaultState.movies },
+  defaultState,
 );
 
 ReactDOM.render(
