@@ -1,7 +1,7 @@
 import React from 'react';
 
 const categoryFilter = ({ change }) => {
-  const CATEGORIES = ['all', 'movie', 'series', 'game'];
+  const CATEGORIES = ['all', 'movie', 'series'];
 
   return (
     <select className="my-3 px-3" onChange={event => { change(event.target.value); }}>

@@ -7,11 +7,11 @@ import CategoryFilter from '../components/CategoryFilter';
 import { changeFilter } from '../actions/index';
 
 class MovieList extends Component {
-  /* eslint-disable */
   constructor(props) {
     super(props);
+    const { movies } = this.props;
     this.state = {
-      movies: this.props.movies,
+      movies,
       input: '',
       isLoading: true,
     };
@@ -19,7 +19,6 @@ class MovieList extends Component {
     this.showMovie = this.showMovie.bind(this);
     this.submitQuery = this.submitQuery.bind(this);
   }
-  /* eslint-enable */
 
   componentDidMount() {
     axios.get('http://www.omdbapi.com/?apikey=1f69237e&s=Batman')
@@ -111,8 +110,13 @@ const mapDispatchToProps = dispatch => ({
 });
 
 MovieList.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.string),
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
+};
+
+MovieList.defaultProps = {
+  movies: [],
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MovieList);

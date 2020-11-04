@@ -5,19 +5,19 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 class MovieDetails extends Component {
-  /* eslint-disable */
   constructor(props) {
     super(props);
+    const { details } = this.props;
     this.state = {
-      details: this.props.details,
+      details,
       isLoading: true,
     };
   }
-  
+
   componentDidMount() {
     let mounted = true;
-    const { imdbID } = this.props.match.params;
-    /* eslint-enable */
+    const { match } = this.props;
+    const { imdbID } = match.params;
 
     axios.get(`http://www.omdbapi.com/?apikey=1f69237e&i=${imdbID}`)
       .then(result => {
@@ -102,12 +102,69 @@ const mapStateToProps = state => ({
 });
 
 MovieDetails.propTypes = {
+  details: PropTypes.shape({
+    Actors: PropTypes.string,
+    Awards: PropTypes.string,
+    BoxOffice: PropTypes.string,
+    Country: PropTypes.string,
+    DVD: PropTypes.string,
+    Director: PropTypes.string,
+    Genre: PropTypes.string,
+    Language: PropTypes.string,
+    Metascore: PropTypes.string,
+    Plot: PropTypes.string,
+    Poster: PropTypes.string,
+    Production: PropTypes.string,
+    Rated: PropTypes.string,
+    Ratings: PropTypes.arrayOf(PropTypes.string),
+    Released: PropTypes.string,
+    Response: PropTypes.string,
+    Runtime: PropTypes.string,
+    Title: PropTypes.string,
+    Type: PropTypes.string,
+    Website: PropTypes.string,
+    Writer: PropTypes.string,
+    Year: PropTypes.string,
+    imdbID: PropTypes.string,
+    imdbRating: PropTypes.string,
+    imdbVotes: PropTypes.string,
+  }),
   imdbID: PropTypes.string.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       imdbID: PropTypes.string,
     }),
   }).isRequired,
+};
+
+MovieDetails.defaultProps = {
+  details: {
+    Actors: '',
+    Awards: '',
+    BoxOffice: '',
+    Country: '',
+    DVD: '',
+    Director: '',
+    Genre: '',
+    Language: '',
+    Metascore: '',
+    Plot: '',
+    Poster: '',
+    Production: '',
+    Rated: '',
+    Ratings: [],
+    Released: '',
+    Response: '',
+    Runtime: '',
+    Title: '',
+    Type: '',
+    Website: '',
+    Writer: '',
+    Year: '',
+    imdbID: '',
+    imdbRating: '',
+    imdbVotes: '',
+  },
 };
 
 export default withRouter(connect(mapStateToProps)(MovieDetails));
