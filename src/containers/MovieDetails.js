@@ -129,7 +129,6 @@ MovieDetails.propTypes = {
     imdbRating: PropTypes.string,
     imdbVotes: PropTypes.string,
   }),
-  imdbID: PropTypes.string.isRequired,
   match: PropTypes.shape({
     params: PropTypes.shape({
       imdbID: PropTypes.string,
