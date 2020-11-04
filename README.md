@@ -45,6 +45,11 @@ $ npm install
 $ npm start
 ```
 
+You can run tests with:
+```
+$ npm test
+```
+
 ## Built With
 - React
 - Redux
