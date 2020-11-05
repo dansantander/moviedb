@@ -11,8 +11,9 @@ import apiFetch from '../mocks/apiFetchMock';
 const initialStateBase = {
   filter: 'all',
 };
+
 const storeBase = createStore(rootReducer, initialStateBase);
-/* eslint-disable */
+
 function render(
   ui,
   {
@@ -21,6 +22,7 @@ function render(
     ...renderOptions
   } = {},
 ) {
+// eslint-disable-next-line react/prop-types
   function Wrapper({ children }) {
     return (
       <Provider store={store}>
@@ -41,8 +43,8 @@ test('show logo image when App is rendered', () => {
 test('show first 10 movies', () => {
   render(<App />);
   apiFetch.movieFetch().then(data => {
-    const movies= []
-    movies.push(data)
+    const movies = [];
+    movies.push(data);
     movies.forEach(movie => {
       expect(screen.getByText(movie.Title)).toBeDefined();
     });
@@ -52,8 +54,8 @@ test('show first 10 movies', () => {
 test('render select tag with default text', () => {
   render(<App />);
   apiFetch.movieFetch().then(data => {
-    const movies= []
-    movies.push(data)
+    const movies = [];
+    movies.push(data);
     expect(screen.getByText('all')).toBeDefined();
   });
 });
@@ -61,8 +63,8 @@ test('render select tag with default text', () => {
 test('render select tag with default text', () => {
   render(<App />);
   apiFetch.movieFetch().then(data => {
-    const movies= []
-    movies.push(data)
+    const movies = [];
+    movies.push(data);
     expect(screen.getByPlaceholderText('Search for movies')).toBeDefined();
   });
 });

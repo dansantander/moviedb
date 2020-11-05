@@ -14,7 +14,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(36, 41, 49);
+  background-color: rgb(36, 48, 66);
 }
 
 code {
@@ -28,7 +28,11 @@ code {
 }
 
 nav {
-  background-color: rgb(46, 53, 63);
+  background-color: rgb(57, 75, 99);
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .nav-container {
@@ -36,9 +40,24 @@ nav {
   margin: 0 auto;
 }
 
-.logo h1 {
-  font-size: 2rem;
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-header h1 {
+  font-size: 3rem;
   font-weight: 600;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #eee;
+  background-color: brown;
+  border-radius: 10px;
+}
+
+.logs a {
+  font-size: 15px;
+  color: whitesmoke;
 }
 
 form {
@@ -73,7 +92,7 @@ select {
 .card {
   height: 100%;
   padding: 2rem;
-  background-color: rgb(46, 53, 63);
+  background-color: rgb(57, 75, 99);
 }
 
 .card p {

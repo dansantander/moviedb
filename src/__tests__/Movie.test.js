@@ -15,7 +15,7 @@ const initialStateBase = {
 };
 
 const storeBase = createStore(rootReducer, initialStateBase);
-/* eslint-disable */
+
 function render(
   ui,
   {
@@ -24,6 +24,7 @@ function render(
     ...renderOptions
   } = {},
 ) {
+// eslint-disable-next-line react/prop-types
   function Wrapper({ children }) {
     return (
       <Provider store={store}>

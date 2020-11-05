@@ -1,23 +1,16 @@
 import React from 'react';
 import {
-  BrowserRouter as Router, Route, Switch, Link,
+  BrowserRouter as Router, Route, Switch,
 } from 'react-router-dom';
 import MovieList from '../containers/MovieList';
 import MovieDetails from '../containers/MovieDetails';
+import Header from './Header';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <nav className="navbar navbar-dark">
-          <div className="nav-container">
-            <Link to="/">
-              <div className="logo">
-                <h1>MovieDB</h1>
-              </div>
-            </Link>
-          </div>
-        </nav>
+        <Header />
         <Switch>
           <Route exact path="/movie/:imdbID" component={MovieDetails}>
             <MovieDetails />
